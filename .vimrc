@@ -5,12 +5,19 @@ filetype off			"required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+" CtrlP: fuzzy file/tag finder
 Plugin 'kien/ctrlp.vim'
+" Airline tag line
 Plugin 'bling/vim-airline'
-Plugin 'jistr/vim-nerdtree-tabs'
+" NerdTREE
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Ack and ag code search
 Plugin 'mileszs/ack.vim'
+" Automatic bracket closing
 Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-commentary'
+" Comment plugin
+Plugin 'scrooloose/nerdcommenter'
 " snipMate plugins
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -18,19 +25,18 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " Git plugins
 Plugin 'tpope/vim-fugitive'
-" Colorscheme plugin
-" Plugin 'NLKNguyen/papercolor-theme'
-
-
+" Tagbar to show all tags linked to a file
+Bundle 'majutsushi/tagbar'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
 " Non-Plugin stuff after this line
- 
+
 " Basics
+:let mapleader = ","
 set backspace=indent,eol,start  " backsapce in insert mode
 set encoding=utf-8              " standard encoding
- 
+
 " syntax highlighting
 syntax on			" syntax highlighting
 syntax enable			" enabled
@@ -62,3 +68,12 @@ let g:Powerline_symbols = 'fancy'
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+
+" Key mappings
+inoremap jk <esc>
+nnoremap - :m+<CR>==
+nnoremap _ :m-2<CR>==
+map <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>; <C-]>
+nnoremap <leader>. :CtrlPTag<cr>
