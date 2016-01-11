@@ -27,6 +27,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 " Tagbar to show all tags linked to a file
 Bundle 'majutsushi/tagbar'
+" Latex
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
@@ -74,6 +76,7 @@ inoremap jk <esc>
 nnoremap - :m+<CR>==
 nnoremap _ :m-2<CR>==
 map <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>; <C-]>
-nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
