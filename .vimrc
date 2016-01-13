@@ -13,7 +13,8 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Ack and ag code search
-Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+"Plugin 'mileszs/ack.vim'
 " Automatic bracket closing
 Plugin 'Raimondi/delimitMate'
 " Comment plugin
@@ -78,5 +79,6 @@ nnoremap _ :m-2<CR>==
 map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>; <C-]>
+nnoremap <leader>- :only<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
