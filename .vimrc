@@ -1,6 +1,6 @@
 " Starting with Vundle and Plugins
 set nocompatible		" use vim settings
-filetype off			"required
+filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -30,6 +30,10 @@ Plugin 'tpope/vim-fugitive'
 Bundle 'majutsushi/tagbar'
 " Latex
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+" Dispatch
+Plugin 'tpope/vim-dispatch'
+" Easymotion
+Plugin 'easymotion/vim-easymotion'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
@@ -61,6 +65,7 @@ set splitbelow			" horizontal split opened below
 
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
+filetype plugin on
 
 " Plugin specific Settings
 
@@ -82,3 +87,4 @@ nnoremap <leader>; <C-]>
 nnoremap <leader>- :only<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:EasyMotion_do_mapping=1
