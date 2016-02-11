@@ -8,7 +8,8 @@ Plugin 'gmarik/Vundle.vim'
 " CtrlP: fuzzy file/tag finder
 Plugin 'kien/ctrlp.vim'
 " Airline tag line
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " NerdTREE
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -27,9 +28,9 @@ Plugin 'honza/vim-snippets'
 " Git plugins
 Plugin 'tpope/vim-fugitive'
 " Tagbar to show all tags linked to a file
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 " Latex
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'lervag/vimtex'
 " Dispatch
 Plugin 'tpope/vim-dispatch'
 " Easymotion
