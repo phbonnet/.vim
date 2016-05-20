@@ -5,45 +5,38 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-" CtrlP: fuzzy file/tag finder
-Plugin 'kien/ctrlp.vim'
 " Airline tag line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mkitt/tabline.vim'
 " NerdTREE
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Ack and ag code search
-Plugin 'rking/ag.vim'
-"Plugin 'mileszs/ack.vim'
 " Automatic bracket closing
 Plugin 'Raimondi/delimitMate'
-" Comment plugin
-Plugin 'scrooloose/nerdcommenter'
-" snipMate plugins
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" C
+Plugin 'myint/clang-complete'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'vivien/vim-linux-coding-style'
 " Git plugins
 Plugin 'tpope/vim-fugitive'
 " Tagbar to show all tags linked to a file
 Plugin 'majutsushi/tagbar'
 " Latex
 Plugin 'lervag/vimtex'
-" Dispatch
-Plugin 'tpope/vim-dispatch'
-" Easymotion
-Plugin 'easymotion/vim-easymotion'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
 " Non-Plugin stuff after this line
 
 " Basics
-:let mapleader = ","
+let mapleader = ","
 set backspace=indent,eol,start  " backsapce in insert mode
 set encoding=utf-8              " standard encoding
+let g:pymode_python = 'python3'
 
 " syntax highlighting
 syntax on			" syntax highlighting
@@ -77,6 +70,30 @@ let g:Powerline_symbols = 'fancy'
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_extensions = ['branch', 'tabline']
+
+" UltiSnips configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>""
+
+" Supertab configuration
+let g:SuperTabDefaultCompletionType='<C-X><C-U>'
+
+" C Lang complete configuration
+set completefunc=ClangComplete
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
+
+" Syntastic configuration
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" clang_complete configuration
+let g:clang_snippets = 1
+let g:clang_snippets_engine='ultisnips'
 
 " Key mappings
 inoremap jk <esc>
@@ -86,6 +103,3 @@ map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>; <C-]>
 nnoremap <leader>- :only<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:EasyMotion_do_mapping=1
