@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/phbo'
 let g:netrw_dirhist_2='/home/phbo/.vim'
 let g:netrw_dirhist_3='/Users/Philippe/.vim'
 let g:netrw_dirhist_4='/Users/Philippe/Users/Philippe/.todo'
+let g:netrw_dirhist_5='/Users/Philippe/Desktop/24_71845_62587_Appendix_acertainmarket.zip-dir/acertainmarket/src/com/acertainmarket/datamodels'
+let g:netrw_dirhist_6='/Users/Philippe/.oh-my-zsh/themes'
+let g:netrw_dirhist_7='/Users/Philippe/.vim'

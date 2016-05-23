@@ -27,6 +27,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 " Latex
 Plugin 'lervag/vimtex'
+" Systemtap
+Plugin 'schnell18/vim-stap'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
