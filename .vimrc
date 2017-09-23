@@ -5,30 +5,20 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 " Airline tag line
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mkitt/tabline.vim'
 " NerdTREE
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Automatic bracket closing
-Plugin 'Raimondi/delimitMate'
-" C
-Plugin 'myint/clang-complete'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'vivien/vim-linux-coding-style'
-" Git plugins
+" Fugitive / Git
 Plugin 'tpope/vim-fugitive'
-" Tagbar to show all tags linked to a file
+" C
+Plugin 'vivien/vim-linux-coding-style'
 Plugin 'majutsushi/tagbar'
 " Latex
 Plugin 'lervag/vimtex'
-" Systemtap
-Plugin 'schnell18/vim-stap'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
@@ -45,10 +35,8 @@ syntax on			" syntax highlighting
 syntax enable			" enabled
 set t_Co=256			" with 256 colors
 " colorscheme PaperColor
-" colorscheme atom-dark
-set background=light
-let g:solarized_termcolors=256
-colorscheme solarized
+set background=dark
+colorscheme PaperColor
 
 set number			" show line numbers
 set hidden			" enables hidden buffers
@@ -75,33 +63,13 @@ set termencoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
 
-" UltiSnips configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>""
-
-" Supertab configuration
-let g:SuperTabDefaultCompletionType='<C-X><C-U>'
-
-" C Lang complete configuration
-set completefunc=ClangComplete
-let g:clang_library_path='/usr/lib/llvm-3.8/lib'
-
-" Syntastic configuration
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" clang_complete configuration
-let g:clang_snippets = 1
-let g:clang_snippets_engine='ultisnips'
+" vimtex configuration
+let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " Key mappings
-inoremap jk <esc>
-nnoremap - :m+<CR>==
-nnoremap _ :m-2<CR>==
 map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>; <C-]>
 nnoremap <leader>- :only<CR>
+nnoremap <leader>+ :ClangFormat<CR>
+vnoremap <leader>+ :ClangFormat<CR>
