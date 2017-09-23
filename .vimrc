@@ -1,5 +1,5 @@
 " Starting with Vundle and Plugins
-set nocompatible		" use vim settings
+set nocompatible
 filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
