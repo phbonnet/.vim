@@ -18,7 +18,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vivien/vim-linux-coding-style'
 Plugin 'majutsushi/tagbar'
 " Latex
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
 " Keep all Plugin commands between vundle#begin/end.
 call vundle#end()
 
@@ -64,7 +64,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_extensions = ['branch', 'tabline']
 
 " vimtex configuration
-let g:vimtex_compiler_latexmk = {'callback' : 0}
+"let g:vimtex_compiler_latexmk = {'callback' : 0}
 
 " Key mappings
 map <leader>n :NERDTreeToggle<CR>
